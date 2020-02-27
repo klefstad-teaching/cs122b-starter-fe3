@@ -57,7 +57,7 @@ async function sendHTTP(method, path, data) {
 
 async function getReport(response) {
   const axiosConfig = {
-    headers: { transactionid: response.headers["transactionid"] }
+    headers: { transaction_id: response.headers["transaction_id"] }
   };
 
   return await pollForReport(axiosConfig);
