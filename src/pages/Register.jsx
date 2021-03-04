@@ -26,7 +26,6 @@ const Register = ({ history, location, match }) => {
     return (
         <div className="form-box">
             <h1>Register</h1>
-            <h1>{session}</h1>
         </div>
     );
 }
