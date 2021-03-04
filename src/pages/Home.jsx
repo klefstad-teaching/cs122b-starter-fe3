@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React, {useEffect} from "react";
 
-class Home extends Component {
-  state = {};
-  render() {
+const Home = ({history, location, match}) => {
     return (
-      <div>
-        <h1>Home</h1>
-      </div>
+        <div className="form-box">
+            <h1>Home </h1>
+        </div>
     );
-  }
 }
+
 
 export default Home;

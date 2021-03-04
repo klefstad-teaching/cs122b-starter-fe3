@@ -6,5 +6,8 @@
   },
   "idmEPs": {
     "loginEP": "/idm/login"
+  },
+  "movieEPs": {
+    "searchEP": "/movies/search"
   }
 }

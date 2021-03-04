@@ -1,17 +1,24 @@
-import Socket from "../util/Socket";
-import { idmEPs } from "../Config.json";
-
-const { loginEP } = idmEPs;
+import Socket from "./Socket";
+import { baseUrl, idmEPs } from "../config/config.json";
+import Gateway from "./Gateway";
 
 async function login(email, password) {
-  const payLoad = {
-    email: email,
-    password: password.split("")
-  };
+    const payLoad = {
+        email: email,
+        password: password.split("")
+    };
 
-  return await Socket.POST(loginEP, payLoad);
+    const options = {
+        baseURL: baseUrl, // Base URL
+        url: idmEPs.loginEP, // Path of URL
+        data: payLoad // Data to send in Body
+    }
+
+    const response = await Socket.POST(options);
+
+    return await Gateway.getReport(response);
 }
 
 export default {
-  login
+    login
 };
